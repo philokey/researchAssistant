@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "Research Assistant",
+    "version": "0.5",
+    "description": "好好学习，专心科研",
+    "permissions": [
+        "tabs",
+        "storage",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "browser_action": {
+        "default_icon": "img/icon.png",
+        "default_title": "RA",
+        "default_popup": "popup.html"
+    },
+    "content_scripts":[
+        {
+            "matches": ["https://www.taobao.com/*","http://www.iqiyi.com/*","http://www.zhihu.com/*","http://bbs.hupu.com/*","http://v.qq.com/*","http://www.tudou.com/*","http://www.youku.com/*","http://www.bilibili.com/*","http://bbs.pku.edu.cn/*","http://bbs.byr.cn/*"],
+            "js":["js/jquery.min.js","js/ra.js"],
+            "run_at":"document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        "inner.html",
+        "ccs/*",
+        "img/*"
+    ],
+    "options_page":"options.html"
+}
